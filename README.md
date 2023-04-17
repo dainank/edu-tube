@@ -16,6 +16,7 @@ A demo collection of microservices for a video-streaming application.
 
 ### Technology Stack
 - Node.js (`src`): Network orientated, relative performance, large ecosystem, lightweight.
+- Express@v5.X (web server)
 - Azure (cloud)
 
 ### Wiki
@@ -26,3 +27,6 @@ See sidebar here: https://github.com/dainank/edu-tube/wiki
 
 #### Microservices
 - HTTP Server: Delivers streaming video for web browser users.
+
+### Misc.
+Sample Videos: https://sample-videos.com/
