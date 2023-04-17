@@ -4,7 +4,8 @@
   "description": "Basic video streaming HTTP server microservice.",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "start:dev": "npx nodemon src/index.js"
   },
   "keywords": [],
   "author": "Benjamin Lucas Whelan",
