@@ -2,13 +2,13 @@
   "name": "video-streaming",
   "version": "1.0.0",
   "description": "Basic video streaming HTTP server microservice.",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Benjamin Lucas Whelan",
+  "license": "MIT",
   "dependencies": {
     "express": "^5.0.0-beta.1"
   }

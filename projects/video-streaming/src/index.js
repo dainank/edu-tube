@@ -2,7 +2,7 @@ const express = require('express'); // load library
 
 const app = express();  // create instance
 
-const port = 3000;
+const port = 3000;  // production should be 80
 
 app.get('/', (req, res) => {
     res.send('Hello World!');
