@@ -18,3 +18,6 @@ A demo collection of microservices for a video-streaming application project.
 ### Technology Stack
 - Node.js (`src`)
 - Azure (cloud)
+
+### Wiki
+See sidebar here: https://github.com/dainank/edu-tube/wiki
