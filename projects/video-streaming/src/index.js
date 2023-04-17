@@ -1,5 +1,5 @@
 const express = require('express');
-const fs = require('fs');
+const fileSystem = require('fs');
 
 const app = express();  // create instance
 
@@ -7,15 +7,15 @@ const port = 3000;  // production should be 80
  
 app.get("/video", async (req, res) => {
  
-    const path = "../";
-    const stats = await fs.promises.stat(path);
+    const path = "./assets/sample.mp4";
+    const stats = await fileSystem.promises.stat(path);
  
     res.writeHead(200, {
         "Content-Length": stats.size,
         "Content-Type": "video/mp4",
     });
       
-    fs.createReadStream(path).pipe(res);
+    fileSystem.createReadStream(path).pipe(res);
 });
  
 app.listen(port, () => {
