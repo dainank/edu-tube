@@ -4,8 +4,16 @@ const { BlobServiceClient, StorageSharedKeyCredential } = require("@azure/storag
 const app = express();
   
 if (!process.env.PORT) {
-    throw new Error("Missing PORT number! Use `export PORT=3000` or `set PORT=3000`")
-};
+    throw new Error("Please specify the port number for the HTTP server with the environment variable PORT.");
+}
+
+if (!process.env.STORAGE_ACCOUNT_NAME) {
+    throw new Error("Please specify the name of an Azure storage account in environment variable STORAGE_ACCOUNT_NAME.");
+}
+
+if (!process.env.STORAGE_ACCESS_KEY) {
+    throw new Error("Please specify the access key to an Azure storage account in environment variable STORAGE_ACCESS_KEY.");
+}
 
 const PORT = process.env.PORT;
 const STORAGE_ACCOUNT_NAME = process.env.STORAGE_ACCOUNT_NAME;
