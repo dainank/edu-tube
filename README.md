@@ -18,6 +18,9 @@ A demo collection of microservices for a video-streaming application.
 - Node.js (`src`): Network orientated, relative performance, large ecosystem, lightweight.
 - Express@v5.X (web server)
 - Azure (cloud)
+- Docker (container)
+- Docker Compose (container configuration)
+- MongoDB (Database)
 
 ### Wiki
 See sidebar here: https://github.com/dainank/edu-tube/wiki
