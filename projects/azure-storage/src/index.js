@@ -31,9 +31,10 @@ function createBlobService() {  // connect to Azure Storage API
 app.get("/video", async (req, res) => {
  
     const videoPath = req.query.path; // query parameters
-    
-    const containerName = "videos";
+    console.log(`Streaming video from path ${videoPath}.`);
+
     const blobService = createBlobService();
+    const containerName = "videos";
     const containerClient = blobService.getContainerClient(containerName); // connects to Azure client
     const blobClient = containerClient.getBlobClient(videoPath);    // connects to specific file for retrieving
  
