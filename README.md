@@ -1,5 +1,8 @@
 # Demo Microservices
 A demo collection of microservices for a video-streaming application.
+## Boot Up Application (all microservices)
+`docker compose down && docker compose up --build`
+
 ## Project Scope
 ### Key Aspects Covered
 - individual microservices
