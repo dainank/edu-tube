@@ -11,7 +11,7 @@ services:
   azure-storage:
     image: azure-storage
     build: 
-      context: ./azure-storage
+      context: ./projects/azure-storage
       dockerfile: Dockerfile
     container_name: video-storage # abstraction (not relevant where it gets videos from (Azure in this case))
     ports:
@@ -25,7 +25,7 @@ services:
   video-streaming:
     image: video-streaming
     build: 
-      context: ./video-streaming
+      context: ./projects/video-streaming
       dockerfile: Dockerfile
     container_name: video-streaming
     ports:
