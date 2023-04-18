@@ -2,14 +2,14 @@ const express = require("express");
 const { BlobServiceClient, StorageSharedKeyCredential } = require("@azure/storage-blob"); // Azure Storage SDK, interact with API
  
 const app = express();
- 
-const PORT = process.env.PORT;
-const STORAGE_ACCOUNT_NAME = process.env.STORAGE_ACCOUNT_NAME;
-const STORAGE_ACCESS_KEY = process.env.STORAGE_ACCESS_KEY;
- 
+  
 if (!process.env.PORT) {
     throw new Error("Missing PORT number! Use `export PORT=3000` or `set PORT=3000`")
 };
+
+const PORT = process.env.PORT;
+const STORAGE_ACCOUNT_NAME = process.env.STORAGE_ACCOUNT_NAME;
+const STORAGE_ACCESS_KEY = process.env.STORAGE_ACCESS_KEY;
 
 function createBlobService() {  // connect to Azure Storage API
     const sharedKeyCredential = new StorageSharedKeyCredential(STORAGE_ACCOUNT_NAME, STORAGE_ACCESS_KEY);
