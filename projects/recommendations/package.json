@@ -1,0 +1,23 @@
+{
+  "name": "recommendations",
+  "version": "1.0.0",
+  "description": "Responsible for recommending videos.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "start:dev": "nodemon --legacy-watch ./src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "amqplib": "^0.10.0",
+    "body-parser": "^1.20.0",
+    "express": "^5.0.0-beta.1",
+    "mongodb": "^4.8.0",
+    "wait-port": "^0.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.18"
+  }
+}

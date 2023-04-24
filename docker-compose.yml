@@ -60,3 +60,25 @@ services:
       - db
       - rabbit
     restart: "no"
+
+  recommendations:
+    image: recommendations
+    build: 
+      context: ./projects/recommendations
+      dockerfile: Dockerfile-dev
+    container_name: recommendations
+    volumes:
+      - /tmp/recommendations/npm-cache:/root/.npm:z
+      - ./projects/recommendations/src:/usr/src/app/src:z
+    ports:
+     - "4003:80"
+    environment:
+      - PORT=80
+      - RABBIT=amqp://guest:guest@rabbit:5672
+      - DBHOST=mongodb://db:27017
+      - DBNAME=recommendations
+      - NODE_ENV=development
+    depends_on:
+      - db
+      - rabbit
+    restart: "no"
