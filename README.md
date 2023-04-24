@@ -32,8 +32,9 @@ See sidebar here: https://github.com/dainank/edu-tube/wiki
 ![architecture](https://user-images.githubusercontent.com/83029234/232541165-891067fd-9c57-45c3-9e29-972ccfe025f6.png)
 
 #### Microservices
-- Video Streaming
-- Video Storage
+- Video Streaming: *serve video to user* [db]
+- Video Storage: *return video from cloud storage*
+- Video History: *record viewing history* [db]
 - MongoDB Database Host
 
 ### Misc.
