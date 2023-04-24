@@ -1,27 +1,66 @@
-const express = require('express');
-const fileSystem = require('fs');
-
-const app = express();  // create instance
+const express = require("express");
+const fs = require("fs");
+const amqp = require('amqplib');
 
 if (!process.env.PORT) {
-    throw new Error("Missing PORT number! Use `export PORT=3000` or `set PORT=3000`")
-};
+    throw new Error("Please specify the port number for the HTTP server with the environment variable PORT.");
+}
 
-const port = process.env.PORT;
+if (!process.env.RABBIT) {
+    throw new Error("Please specify the name of the RabbitMQ host using environment variable RABBIT");
+}
 
-app.get("/video", async (req, res) => {
+const PORT = process.env.PORT;
+const RABBIT = process.env.RABBIT;
 
-    const path = "./assets/sample.mp4";
-    const stats = await fileSystem.promises.stat(path);
+//
+// Send the "viewed" to the history microservice.
+//
+function sendViewedMessage(messageChannel, videoPath) {
+    console.log(`Publishing message on "viewed" queue.`);
 
-    res.writeHead(200, {
-        "Content-Length": stats.size,
-        "Content-Type": "video/mp4",
+    const msg = { videoPath: videoPath };
+    const jsonMsg = JSON.stringify(msg);
+    messageChannel.publish("", "viewed", Buffer.from(jsonMsg)); // Publish message to the "viewed" queue.
+}
+
+//
+// Application entry point.
+//
+async function main() {
+
+    console.log(`Connecting to RabbitMQ server at ${RABBIT}.`);
+
+    const messagingConnection = await amqp.connect(RABBIT) // Connect to the RabbitMQ server.
+
+    console.log("Connected to RabbitMQ.");
+
+    const messageChannel = await messagingConnection.createChannel(); // Create a RabbitMQ messaging channel.
+
+    const app = express();
+
+    app.get("/video", async (req, res) => { // Route for streaming video.
+
+        const videoPath = "./assets/sample.mp4";
+        const stats = await fs.promises.stat(videoPath);
+
+        res.writeHead(200, {
+            "Content-Length": stats.size,
+            "Content-Type": "video/mp4",
+        });
+    
+        fs.createReadStream(videoPath).pipe(res);
+
+        sendViewedMessage(messageChannel, videoPath); // Send message to "history" microservice that this video has been "viewed".
     });
 
-    fileSystem.createReadStream(path).pipe(res);
-});
+    app.listen(PORT, () => {
+        console.log("Microservice online.")
+    });
+}
 
-app.listen(port, () => {
-    console.log(`Microservice listening ...`);
-});
+main()
+    .catch(err => {
+        console.error("Microservice failed to start.");
+        console.error(err && err.stack || err);
+    });

@@ -1,0 +1,9 @@
+FROM node:18.5.0-alpine
+
+WORKDIR /usr/src/app
+COPY package*.json ./
+
+CMD npm config set cache-min 9999999 && \
+    npm install && \
+    npx wait-port rabbit:5672 && \
+    npm run start:dev
