@@ -5,12 +5,12 @@ services:
     image: video-streaming
     build:
       context: ./projects/video-streaming
-      dockerfile: Dockerfile-dev
+      # dockerfile: Dockerfile-dev
     container_name: video-streaming
     volumes:
       - /tmp/video-streaming/npm-cache:/root/.npm:z
-      - ./video-streaming/src:/usr/src/app/src:z
-      - ./video-streaming/videos:/usr/src/app/videos:z
+      - ./projects/video-streaming/src:/usr/src/app/src:z
+      - ./projects/video-streaming/assets:/usr/src/app/assets:z
     ports:
       - "4000:80"
     environment:
@@ -25,8 +25,8 @@ services:
       dockerfile: Dockerfile-dev
     container_name: video-history
     volumes:
-      - /tmp/video-history/npm-cache:/root/.npm:z
-      - ./video-history/src:/usr/src/app/src:z
+      - /tmp/video-history/npm-cache:/root/.npm:z # share dep.
+      - ./projects/video-history/src:/usr/src/app/src:z  # share src code
     ports:
       - "4001:80"
     environment:

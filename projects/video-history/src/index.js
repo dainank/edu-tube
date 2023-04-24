@@ -8,7 +8,7 @@ const PORT = process.env.PORT;
 
 async function main() {
 
-    console.log("Hello world!");
+    console.log("Test world!");
 
     const app = express();
 
