@@ -20,7 +20,7 @@ spec:
     spec:
       containers: 
       - name: video-streaming
-        image: video-streaming:1
+        image: video-streaming:5
         imagePullPolicy: Never  # since local deployment, we never need to pull image
         env:
         - name: PORT
