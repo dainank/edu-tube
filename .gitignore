@@ -4,3 +4,4 @@ node_modules/
 .terraform/
 *.backup
 *.info
+*.tfstate
