@@ -16,13 +16,6 @@ if (!process.env.PORT) {
 const PORT = process.env.PORT;
 
 //
-// HTTP GET route we can use to check if the service is handling requests.
-//
-app.get("/live", (req, res) => {
-    res.sendStatus(200);
-});
-
-//
 // Registers a HTTP GET route for video streaming.
 //
 app.get("/video", async (req, res) => { // Route for streaming video.
@@ -37,20 +30,9 @@ app.get("/video", async (req, res) => { // Route for streaming video.
     fs.createReadStream(videoPath).pipe(res);
 });
 
-if (require.main === module) {
-    //
-    // When this script is run as the entry point, starts the HTTP server.
-    //
-    app.listen(PORT, () => {
-        console.log(`Microservice online.`);
-    });
-}
-else {
-    //
-    // Otherwise, exports the express app object for use in tests.
-    //
-    module.exports = {
-        app,
-    };
-}
-
+//
+// Starts the HTTP server.
+//
+app.listen(PORT, () => {
+    console.log(`Microservice online.`);
+});
