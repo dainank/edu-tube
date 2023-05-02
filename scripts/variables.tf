@@ -1,11 +1,7 @@
 # Sets global variables for this Terraform project.
 
-variable con_reg {
-  default = "edutubetf"
-}
-
 variable app_name {
-  default = "edutube"
+  default = "edutube3"
 }
 
 variable location {

@@ -1,11 +1,9 @@
-# Iteration-3
-
 This iteration uses Terraform to create a Kubernetes cluster in Azure.
 
 Run this iteration using:
 
 ```bash
-cd iterations/third
+cd scripts
 terraform init
 terraform apply -auto-approve
 ```
