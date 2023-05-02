@@ -19,3 +19,9 @@ You can retrieve values from the output using:
 ```bash
 terraform output -raw {registry_output}
 ```
+
+or through the Azure CLI:
+```bash
+az acr show --name {your-container-registry-name} --output table
+az acr credential show --name {your-container-registry-name} --output table
+```
