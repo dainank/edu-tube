@@ -2,3 +2,4 @@ node_modules/
 .env
 *.hcl
 .terraform/
+*.backup

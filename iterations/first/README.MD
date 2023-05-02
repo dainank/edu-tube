@@ -9,3 +9,8 @@ cd iteration-1/scripts
 terraform init
 terraform apply
 ```
+
+Destroy this iteration using:
+```bash
+terraform destroy
+```
