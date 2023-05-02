@@ -1,11 +1,11 @@
-# Ixample-2
+# Iteration-3
 
-This iteration uses Terraform to create a private container registery in Azure.
+This iteration uses Terraform to create a Kubernetes cluster in Azure.
 
 Run this iteration using:
 
 ```bash
-cd iterations/second
+cd iterations/third
 terraform init
 terraform apply -auto-approve
 ```

@@ -3,3 +3,4 @@ node_modules/
 *.hcl
 .terraform/
 *.backup
+*.info

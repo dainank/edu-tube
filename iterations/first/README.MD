@@ -5,7 +5,7 @@ This iteration uses Terraform to create a resource group in Azure.
 Run this iteration using:
 
 ```bash
-cd iterations/first/scripts
+cd iterations/first
 terraform init
 terraform apply
 ```
