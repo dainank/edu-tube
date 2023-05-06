@@ -39,3 +39,8 @@ See sidebar here: https://github.com/dainank/edu-tube/wiki
 
 ### Misc.
 Sample Videos: https://sample-videos.com/
+
+```bash
+npm test
+npm run test:watch
+```
