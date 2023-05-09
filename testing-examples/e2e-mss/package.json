@@ -1,0 +1,12 @@
+{
+  "name": "e2e-mss",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "playwright test --reporter=list  --workers 1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.30.0",
+    "axios": "^1.3.1",
+    "mongodb": "^4.8.0"
+  }
+}
