@@ -2,7 +2,15 @@
 A demo collection of microservices for a video-streaming application that lives within the *Knowledge Navigator* ecosystem.
 
 ## Building, Installing and Running
+You need Docker and Docker-Compose installed to run this.
 
+Boot EduTube from your terminal:
+
+```bash
+docker-compose up --build
+```
+
+Give it some time to start, wait for the `gateway` service to come online. Then point your browser at http://localhost:4000/
 
 ## Project Scope
 ### Key Aspects Covered
