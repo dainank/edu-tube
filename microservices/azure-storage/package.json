@@ -1,0 +1,20 @@
+{
+    "name": "azure-storage",
+    "version": "1.0.0",
+    "description": "Video storage abstraction with Azure Storage.",
+    "main": "./src/index.js",
+    "scripts": {
+      "start": "node ./src/index.js",
+      "start:dev": "nodemon ./src/index.js"
+    },
+    "keywords": [],
+    "author": "Benjamin Lucas Whelan",
+    "license": "MIT",
+    "devDependencies": {
+      "nodemon": "^2.0.22"
+    },
+    "dependencies": {
+      "@azure/storage-blob": "^12.14.0",
+      "express": "^5.0.0-beta.1"
+    }
+  }
