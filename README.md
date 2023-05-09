@@ -58,3 +58,12 @@ A [wiki](https://github.com/dainank/edu-tube/wiki) can be found within this repo
 - MongoDB Database Host
 
 #### Key Events
+The following two `msg` events simulate multiple implementations receiving messages and how the various microservices will then handle them.
+
+- "viewed-uploaded":
+    - *video upload* publishes `msg`; *metadata* consumes `msg`
+	
+- viewed:
+    - *video streaming* publishes `msg`; *history* consumes `msg`
+
+Other events include the REST API gateway receiving frontend requests.
