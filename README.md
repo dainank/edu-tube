@@ -5,9 +5,14 @@ A demo collection of microservices for a video-streaming application that lives 
 You need Docker and Docker-Compose installed to run this.
 
 Boot EduTube from your terminal:
-
 ```bash
 docker-compose up --build
+```
+
+Shutdown EduTube from your terminal:
+
+```bash
+docker-compose down
 ```
 
 Give it some time to start, wait for the `gateway` service to come online. Then point your browser at http://localhost:4000/
