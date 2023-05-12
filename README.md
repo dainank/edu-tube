@@ -10,7 +10,6 @@ docker-compose up --build
 ```
 
 Shutdown EduTube from your terminal:
-
 ```bash
 docker-compose down
 ```
