@@ -1,10 +1,5 @@
 
 describe("metadata microservice", () => {
-
-    //
-    // Setup mocks.
-    //
-
     const mockListenFn = jest.fn((port, callback) => callback());
     const mockGetFn = jest.fn();
 
@@ -70,10 +65,6 @@ describe("metadata microservice", () => {
     //
 
     const { startMicroservice } = require("./index"); 
-
-    //
-    // Tests go here.
-    //
     
     test("microservice starts web server on startup", async () => {
         
@@ -121,7 +112,4 @@ describe("metadata microservice", () => {
             videos: [ mockRecord1, mockRecord2 ], // Expect that the mock records were retrieved via the mock database function.
         });
     });
-
-    // ... more tests go here ...
-
 });

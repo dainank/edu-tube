@@ -4,7 +4,7 @@ const { describe } = test;
 const { loadFixture } = require('./lib/db-fixture');
 
 //
-// An example of running ab end-to-end test against our microservices application using Playwright.
+// An example of running end-to-end test against our microservices application using Playwright.
 //
 describe("edutube front end", () => {
 
@@ -28,6 +28,4 @@ describe("edutube front end", () => {
         await expect(secondVideo).toHaveText("Another video.mp4"); // Make sure file name is correct.
         await expect(secondVideo).toHaveAttribute("href", "/video?id=5ea234a5c34230004592eb33"); // Make sure link is correct.
     });
-
-    // Other tests go here.
 });
